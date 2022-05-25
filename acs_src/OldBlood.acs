@@ -38,6 +38,12 @@ Script "OldBloodAddToQueue" (void)
 	}
 }
 
+Script "OldBloodEarlyPreviewMessage" OPEN
+{
+	SetFont("BigFont");
+	HudMessage(s: "OldBlood EARLY PREVIEW VERSION.\n\nExpect lots of jank!"; HUDMSG_PLAIN, 777, CR_GOLD, 1.5, 0.5, 5.0);
+}
+
 /*
 Script "OldBloodDebug" OPEN
 {
