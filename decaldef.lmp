@@ -151,7 +151,6 @@ DecalGroup BloodSplat
 Generator OldBloodPistol			BulletChip
 Generator OldBloodChainsaw			BulletChip
 Generator OldBloodShotgun			BulletChip
-Generator OldBloodSuperShotgun		BulletChip
 Generator OldBloodChaingun			BulletChip
 
 /*
