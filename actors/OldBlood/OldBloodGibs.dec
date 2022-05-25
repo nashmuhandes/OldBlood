@@ -39,7 +39,6 @@ Actor OldBloodGib
 		Death:
 			"####" "#" 0 ACS_NamedExecuteWithResult("OldBloodAddToQueue", 0)
 			"####" "#" 0 A_SpawnItemEx("OldBloodFX1")
-			"####" "#" 0 A_Stop
 			"####" "#" 0 A_ChangeFlag("NoInteraction", 1)
 			"####" "#" 0 A_ChangeFlag("MoveWithSector", 1)
 			"####" A -1
