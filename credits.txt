@@ -1,0 +1,12 @@
+Nash Muhandes:
+	This entire mod!
+	Some assets borrowed from Nash's Gore Mod: Vengeance Edition
+	Wall decal graphics
+	Floor blood splat sprites
+	Blood FX sprites
+
+Revenant100:
+	Doom Sprite Fix Project assets
+
+Boondorl:
+	Some coding help
