@@ -63,6 +63,7 @@ DecalGroup BulletChip
  * when something bleeds. If a blood color is set, the Shade color will be ignored,
  * and the actor's blood color will be used instead.
  */
+
 Decal BloodSplat1
 {
 	Pic BSPLAT1
