@@ -1,0 +1,57 @@
+//===========================================================================
+//
+// OldBlood
+// Written by Nash Muhandes
+// License: MIT
+//
+//===========================================================================
+
+#library "OLDBLOOD"
+#include "zcommon.acs"
+
+#libdefine HUDMSG_TIC 1.0 / 35 + 1
+#libdefine MAX_OBJECTS 1024
+
+int queueCount = 0;
+int queueTIDs[MAX_OBJECTS];
+
+Script "OldBloodAddToQueue" (void)
+{
+	int tid = UniqueTID();
+	Thing_ChangeTID(0, tid);
+
+	if (queueCount < MAX_OBJECTS)
+	{
+		queueTIDs[queueCount] = tid;
+		queueCount++;
+	}
+	else
+	{
+		Thing_Remove(queueTIDs[0]);
+
+		for (int i = 0; i < MAX_OBJECTS - 1; i++)
+		{
+			queueTIDs[i] = queueTIDs[i + 1];
+		}
+
+		queueTIDs[MAX_OBJECTS - 1] = tid;
+	}
+}
+
+/*
+Script "OldBloodDebug" OPEN
+{
+	str txt = StrParam(s: "queueCount: ", d: queueCount, s: "\n");
+
+	for (int i = 0; i < MAX_OBJECTS; i++)
+	{
+		txt = StrParam(s: txt, d: i, s: ": ", d: queueTIDs[i], s: "\n");
+	}
+
+	HudMessage(s: txt; HUDMSG_PLAIN, 666, CR_WHITE, 0.5, 0.5, HUDMSG_TIC);
+
+	Delay(1);
+	Restart;
+}
+*/
+

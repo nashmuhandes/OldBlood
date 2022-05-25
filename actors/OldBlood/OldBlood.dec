@@ -1,0 +1,139 @@
+//===========================================================================
+//
+// OldBlood
+// Written by Nash Muhandes
+// License: MIT
+//
+//===========================================================================
+
+Actor OldBlood : Blood replaces Blood
+{
+	+CORPSE
+	+FORCEXYBILLBOARD
+	-ALLOWPARTICLES
+
+	States
+	{
+		Spawn:
+			TNT1 AAA 0
+			TNT1 A 0 A_SpawnItemEx("OldBloodFX1",
+				frandom[rng_SpawnBlood](-4.0, 4.0),
+				frandom[rng_SpawnBlood](-4.0, 4.0),
+				frandom[rng_SpawnBlood](-4.0, 4.0),
+				frandom[rng_SpawnBlood](-2.0, 2.0),
+				frandom[rng_SpawnBlood](-2.0, 2.0),
+				frandom[rng_SpawnBlood](0.0, 2.0),
+				frandom[rng_SpawnBlood](0.0, 360.0),
+				SXF_TRANSFERTRANSLATION)
+			TNT1 A 0 A_Jump(256, "BloodC", "BloodB", "BloodA")
+		BloodC:
+			BLUD C 8
+		BloodB:
+			BLUD B 8
+		BloodA:
+			BLUD A 8
+			Stop
+		Crash:
+			TNT1 A 0 A_SpawnItemEx("OldBloodSpot",
+				frandom[rng_SpawnBlood](-4.0, 4.0),
+				frandom[rng_SpawnBlood](-4.0, 4.0),
+				0.0,
+				0.0, 0.0, 0.0,
+				frandom[rng_SpawnBlood](0.0, 360.0),
+				SXF_TRANSFERTRANSLATION)
+			Stop
+	}
+}
+
+Actor OldBloodSpot
+{
+	Radius 7
+	Height 3
+	+DONTSPLASH
+	+FLOORCLIP
+	+FORCEXYBILLBOARD
+	+NOINTERACTION
+	-SOLID
+
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay ACS_NamedExecuteWithResult("OldBloodAddToQueue", 0)
+			TNT1 A 0 A_SetScale(frandom[rnd_BloodSpot](0.5, 1.0), 1.0)
+			TNT1 A 0 A_SetScale(ScaleX * frandom[rnd_BloodSpot](0.8, 1.0), ScaleY * frandom[rnd_BloodSpot](0.8, 1.0))
+			TNT1 A 0 A_Jump(128, 2)
+			TNT1 A 0 A_SetScale(ScaleX * -1.0, ScaleY)
+			TNT1 A 1 A_Jump(256, "Blood1", "Blood2", "Blood3", "Blood4", "Blood5", "Blood6")
+		Blood1:
+			VBLD A 35 A_ChangeFlag("MoveWithSector", 1)
+			"####" "#" -1
+			Stop
+		Blood2:
+			VBLD B 35 A_ChangeFlag("MoveWithSector", 1)
+			"####" "#" -1
+			Stop
+		Blood3:
+			VBLD B 35 A_ChangeFlag("MoveWithSector", 1)
+			"####" "#" -1
+			Stop
+		Blood4:
+			VBLD C 35 A_ChangeFlag("MoveWithSector", 1)
+			"####" "#" -1
+			Stop
+		Blood5:
+			VBLD D 35 A_ChangeFlag("MoveWithSector", 1)
+			"####" "#" -1
+			Stop
+		Blood6:
+			VBLD E 35 A_ChangeFlag("MoveWithSector", 1)
+			"####" "#" -1
+			Stop
+	}
+}
+
+Actor OldBloodFX1
+{
+	Gravity 0.11
+	Scale 0.666
+	+CLIENTSIDEONLY
+	+DONTSPLASH
+	+FORCEXYBILLBOARD
+	+NOBLOCKMAP
+	+NOCLIP
+	+CORPSE
+
+	States
+	{
+		Spawn:
+			VBLD G 1 A_SetScale(ScaleX * 1.073, ScaleY * 1.025)
+			VBLD G 1 A_FadeOut(0.045)
+			Loop
+		Crash:
+			TNT1 A 0 A_ChangeFlag("NoInteraction", 1)
+			TNT1 AAAAAAAAAAAAAAAAA 1 A_SpawnItemEx("OldBloodSplash",
+				frandom[rng_SpawnBlood](-64.0, 64.0),
+				frandom[rng_SpawnBlood](-64.0, 64.0),
+				0.0,
+				0.0, 0.0, 0.0,
+				0.0,
+				SXF_TRANSFERTRANSLATION,
+				179)
+			Stop
+	}
+}
+
+Actor OldBloodSplash
+{
+	Scale 0.612
+	+CLIENTSIDEONLY
+	+DONTSPLASH
+
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_SpawnItemEx("OldBloodSpot", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, SXF_TRANSFERTRANSLATION, 150)
+			TNT1 A 0 A_PlaySound("nashgore/bloodsplash")
+			BDRP BCDEF 3
+			Stop
+	}
+}

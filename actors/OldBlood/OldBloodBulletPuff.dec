@@ -1,0 +1,12 @@
+//===========================================================================
+//
+// OldBlood
+// Written by Nash Muhandes
+// License: MIT
+//
+//===========================================================================
+
+Actor OldBloodBulletPuff : BulletPuff replaces BulletPuff
+{
+	RenderStyle Normal
+}

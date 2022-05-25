@@ -1,0 +1,13 @@
+//===========================================================================
+//
+// OldBlood
+// Written by Nash Muhandes
+// License: MIT
+//
+//===========================================================================
+
+Actor OldBloodLostSoul : LostSoul replaces LostSoul
+{
+	RenderStyle Normal
+}
+

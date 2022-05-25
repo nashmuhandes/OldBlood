@@ -1,0 +1,147 @@
+/***** Bullet Chips *****/
+
+Decal BulletChip1
+{
+	Pic CHIP1
+	X-Scale 0.5
+	Y-Scale 0.5
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BulletChip2
+{
+	Pic CHIP2
+	X-Scale 0.5
+	Y-Scale 0.5
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BulletChip3
+{
+	Pic CHIP3
+	X-Scale 0.5
+	Y-Scale 0.5
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BulletChip4
+{
+	Pic CHIP4
+	X-Scale 0.5
+	Y-Scale 0.5
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BulletChip5
+{
+	Pic CHIP5
+	X-Scale 0.5
+	Y-Scale 0.5
+	RandomFlipX
+	RandomFlipY
+}
+
+DecalGroup BulletChip
+{
+	BulletChip1	1
+	BulletChip2	1
+	BulletChip3	1
+	BulletChip4	1
+	BulletChip5	1
+}
+
+/***** Blood Decals ********************************************************/
+/*
+ * Blood splats just stick to the walls.
+ * Blood smears crawl down walls a bit like in Blood.
+ *
+ * These do not need generators; the engine will create them automatically
+ * when something bleeds. If a blood color is set, the Shade color will be ignored,
+ * and the actor's blood color will be used instead.
+ */
+Decal BloodSplat1
+{
+	Pic BSPLAT1
+	Shade "BloodDefault"
+	X-Scale 1.0
+	Y-Scale 1.0
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BloodSplat2
+{
+	Pic BSPLAT2
+	Shade "BloodDefault"
+	X-Scale 1.0
+	Y-Scale 1.0
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BloodSplat3
+{
+	Pic BSPLAT3
+	Shade "BloodDefault"
+	X-Scale 1.0
+	Y-Scale 1.0
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BloodSplat4
+{
+	Pic BSPLAT4
+	Shade "BloodDefault"
+	X-Scale 1.0
+	Y-Scale 1.0
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BloodSplat5
+{
+	Pic BSPLAT5
+	Shade "BloodDefault"
+	X-Scale 1.0
+	Y-Scale 1.0
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BloodSplat6
+{
+	Pic BSPLAT6
+	Shade "BloodDefault"
+	X-Scale 1.0
+	Y-Scale 1.0
+	RandomFlipX
+	RandomFlipY
+}
+
+Decal BloodSplat7
+{
+	Pic BSPLAT7
+	Shade "BloodDefault"
+	X-Scale 1.0
+	Y-Scale 1.0
+	RandomFlipX
+	RandomFlipY
+}
+
+// The smaller blood splats are more common than the big ones.
+
+DecalGroup BloodSplat
+{
+	BloodSplat1	6
+	BloodSplat2	6
+	BloodSplat3	6
+	BloodSplat4	3
+	BloodSplat5	3
+	BloodSplat6	3
+	BloodSplat7	3
+}

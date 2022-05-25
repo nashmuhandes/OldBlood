@@ -1,0 +1,3 @@
+#include "actors/OldBlood/OldBlood.dec"
+#include "actors/OldBlood/OldBloodBulletPuff.dec"
+#include "actors/OldBlood/OldBloodMonsters.dec"
