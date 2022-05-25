@@ -6,6 +6,46 @@
 //
 //===========================================================================
 
+Actor OldBloodZombieMan : ZombieMan replaces ZombieMan
+{
+	States
+	{
+		Missile:
+			POSS E 10 A_FaceTarget
+			POSS F 8 Bright A_PosAttack
+			POSS E 8
+			Goto See
+	}
+}
+
+Actor OldBloodCyberdemon : Cyberdemon replaces Cyberdemon
+{
+	States
+	{
+		Missile:
+			CYBR E 6 A_FaceTarget
+			CYBR F 12 Bright A_CyberAttack
+			CYBR E 12 A_FaceTarget
+			CYBR F 12 Bright A_CyberAttack
+			CYBR E 12 A_FaceTarget
+			CYBR F 12 Bright A_CyberAttack
+			Goto See
+	}
+}
+
+Actor OldBloodSpiderMastermind : SpiderMastermind replaces SpiderMastermind
+{
+	States
+	{
+		Missile:
+			SPID A 20 A_FaceTarget
+			SPID G 4 Bright A_SPosAttackUseAtkSound
+			SPID H 4 Bright A_SposAttackUseAtkSound
+			SPID H 1 Bright A_SpidRefire
+			Goto Missile + 1
+	}
+}
+
 Actor OldBloodLostSoul : LostSoul replaces LostSoul
 {
 	RenderStyle Normal

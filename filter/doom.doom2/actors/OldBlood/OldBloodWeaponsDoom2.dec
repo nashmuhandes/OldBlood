@@ -1,0 +1,11 @@
+//===========================================================================
+//
+// OldBlood
+// Written by Nash Muhandes
+// License: MIT
+//
+//===========================================================================
+
+Actor OldBloodSuperShotgun : SuperShotgun replaces SuperShotgun
+{
+}

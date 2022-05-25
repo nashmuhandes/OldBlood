@@ -9,4 +9,5 @@
 Actor OldBloodBulletPuff : BulletPuff replaces BulletPuff
 {
 	RenderStyle Normal
+	-ALLOWPARTICLES
 }

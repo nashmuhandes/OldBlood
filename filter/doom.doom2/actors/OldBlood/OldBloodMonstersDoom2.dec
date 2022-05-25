@@ -1,0 +1,32 @@
+//===========================================================================
+//
+// OldBlood
+// Written by Nash Muhandes
+// License: MIT
+//
+//===========================================================================
+
+Actor OldBloodChaingunGuy : ChaingunGuy replaces ChaingunGuy
+{
+	States
+	{
+		Missile:
+			CPOS E 10 A_FaceTarget
+			CPOS FE 4 Bright A_CPosAttack
+			CPOS F 1 Bright A_CPosRefire
+			Goto Missile + 1
+	}
+}
+
+Actor OldBloodArachnotron : Arachnotron replaces Arachnotron
+{
+	States
+	{
+		Missile:
+			BSPI A 20 A_FaceTarget
+			BSPI G 4 Bright A_BspiAttack
+			BSPI H 4 Bright
+			BSPI H 1 Bright A_SpidRefire
+			Goto Missile + 1
+	}
+}

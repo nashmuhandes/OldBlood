@@ -145,3 +145,38 @@ DecalGroup BloodSplat
 	BloodSplat6	3
 	BloodSplat7	3
 }
+
+/***** Generators **********************************************************/
+
+Generator OldBloodPistol			BulletChip
+Generator OldBloodChainsaw			BulletChip
+Generator OldBloodShotgun			BulletChip
+Generator OldBloodSuperShotgun		BulletChip
+Generator OldBloodChaingun			BulletChip
+
+/*
+Generator PlasmaBall		PlasmaScorch
+Generator Rocket			Scorch
+Generator BFGBall			BFGLightning
+Generator PlasmaBall1		GreenPlasmaScorch
+Generator PlasmaBall2		RedPlasmaScorch
+
+Generator MarinePistol		BulletChip
+Generator MarineShotgun		BulletChip
+Generator MarineSSG			BulletChip
+Generator MarineChaingun	BulletChip
+Generator MarineRailgun		RailScorch
+
+Generator ZombieMan			BulletChip
+Generator ShotgunGuy		BulletChip
+Generator ChaingunGuy		BulletChip
+Generator WolfensteinSS		BulletChip
+Generator SpiderMastermind	BulletChip
+
+Generator ArachnotronPlasma	ArachnotronScorch
+Generator BaronBall			BaronScorch
+Generator CacodemonBall		CacoScorch
+Generator DoomImpBall		DoomImpScorch
+Generator FatShot			Scorch
+Generator RevenantTracer	RevenantScorch
+*/

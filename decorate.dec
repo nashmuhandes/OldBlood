@@ -1,3 +1,5 @@
 #include "actors/OldBlood/OldBlood.dec"
 #include "actors/OldBlood/OldBloodBulletPuff.dec"
 #include "actors/OldBlood/OldBloodMonsters.dec"
+#include "actors/OldBlood/OldBloodPlayer.dec"
+#include "actors/OldBlood/OldBloodWeapons.dec"
