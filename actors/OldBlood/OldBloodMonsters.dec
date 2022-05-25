@@ -15,6 +15,29 @@ Actor OldBloodZombieMan : ZombieMan replaces ZombieMan
 			POSS F 8 Bright A_PosAttack
 			POSS E 8
 			Goto See
+		XDeath:
+			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner1")
+			Goto Super::XDeath
+	}
+}
+
+Actor OldBloodShotgunGuy : ShotgunGuy replaces ShotgunGuy
+{
+	States
+	{
+		XDeath:
+			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner1")
+			Goto Super::XDeath
+	}
+}
+
+Actor OldBloodDoomImp : DoomImp replaces DoomImp
+{
+	States
+	{
+		XDeath:
+			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner1")
+			Goto Super::XDeath
 	}
 }
 

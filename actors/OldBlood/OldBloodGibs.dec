@@ -1,0 +1,71 @@
+//===========================================================================
+//
+// OldBlood
+// Written by Nash Muhandes
+// License: MIT
+//
+//===========================================================================
+
+Actor OldBloodGib
+{
+	Radius 4
+	Height 8
+	Gravity 0.43
+	Speed 7
+	Mass 1
+	BounceFactor 0.4
+	Decal "BloodSplat"
+	+MISSILE
+	+DOOMBOUNCE
+	+NOBLOCKMAP
+	+FLOORCLIP
+	+DONTSPLASH
+	+NOTELEPORT
+	+FORCEXYBILLBOARD
+	+THRUACTORS
+
+	States
+	{
+		Spawn:
+			TNT1 A 0 NoDelay A_Jump(128, 2)
+			TNT1 A 0 A_SetScale(ScaleX * -1.0, ScaleY)
+			TNT1 A 0 A_Jump(256, "Spawn2")
+			Stop
+		Spawn2:
+			TNT1 A 0 A_Jump(128, 2)
+			TNT1 A 0 A_Jump(256, "SpawnFail")
+			TNT1 A 0 A_Jump(256, "Spawn3")
+			Stop
+		Death:
+			"####" "#" 0 ACS_NamedExecuteWithResult("OldBloodAddToQueue", 0)
+			"####" "#" 0 A_SpawnItemEx("OldBloodFX1")
+			"####" "#" 0 A_Stop
+			"####" "#" 0 A_ChangeFlag("NoInteraction", 1)
+			"####" "#" 0 A_ChangeFlag("MoveWithSector", 1)
+			"####" A -1
+			Stop
+		SpawnFail:
+			TNT1 A 0
+			Stop
+	}
+}
+
+Actor OldBloodGib1 : OldBloodGib
+{
+	States
+	{
+		Spawn3:
+			GIB1 ABCDEFGH 4
+			Loop
+	}
+}
+
+Actor OldBloodGibSpawner1
+{
+	States
+	{
+		Spawn:
+			TNT1 AAAAAAAAAAAAAAAAAAAA 0 NoDelay A_CustomMissile ("OldBloodGib1", frandom(-4.0, 4.0), 0.0, frandom(0.0, 360.0), CMF_AIMDIRECTION, frandom(0.0, 180.0))
+			Stop
+	}
+}
