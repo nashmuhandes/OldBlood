@@ -18,11 +18,4 @@ Actor OldBloodPlayerDoom2 : OldBloodPlayer replaces DoomPlayer
 	Player.WeaponSlot 5, OldBloodRocketLauncher
 	Player.WeaponSlot 6, OldBloodPlasmaRifle
 	Player.WeaponSlot 7, OldBloodBFG9000
-
-	States
-	{
-		Spawn:
-			BOSS A 1
-			Loop
-	}
 }
