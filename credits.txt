@@ -8,5 +8,8 @@ Nash Muhandes:
 Revenant100:
 	Doom Sprite Fix Project assets
 
+Enjay:
+	Terrain splash assets
+
 Boondorl:
 	Some coding help

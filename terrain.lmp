@@ -1,0 +1,221 @@
+///////////////////////////////////////////////////////////////////////////////////
+// Red Blood Splash
+///////////////////////////////////////////////////////////////////////////////////
+
+Splash Blood
+{
+	SmallClass		NJBloodBase
+	SmallClip		10
+	SmallSound		world/sludgegloopsmall
+
+	BaseClass		NJBloodBase
+	ChunkClass		NJBloodChunk
+	ChunkXVelShift	6
+	ChunkYVelShift	6
+	ChunkZVelShift	6
+	ChunkBaseZVel	2
+	Sound			world/sludgegloop
+	NoAlert
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// Lava Splash
+///////////////////////////////////////////////////////////////////////////////////
+
+Splash Lava
+{
+	SmallClass		NJLavaBase
+	SmallClip		12
+	SmallSound		world/lavasizzlesmall
+
+	BaseClass		NJLavaBase
+	ChunkClass		NJLavaSmoke
+	ChunkXVelShift	-1
+	ChunkYVelShift	-1
+	ChunkZVelShift	7
+	ChunkBaseZVel	1
+	Sound			world/lavasizzle
+	NoAlert
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// Lava Smoke Only Splash
+///////////////////////////////////////////////////////////////////////////////////
+
+Splash LavaSmoke
+{
+	SmallClass		NJLavaSmokeOnly
+	SmallClip		12
+	SmallSound		world/lavsiz2
+
+	BaseClass		NJLavaSmokeOnly
+	ChunkClass		NJLavaSmokeOnly
+	ChunkXVelShift	-1
+	ChunkYVelShift	-1
+	ChunkZVelShift	7
+	ChunkBaseZVel	1
+	Sound			world/lavsiz2
+	NoAlert
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// Nukage Green and Smokey
+///////////////////////////////////////////////////////////////////////////////////
+
+Splash Nuke
+{
+	SmallClass		NJNukageBase
+	SmallClip		6
+	SmallSound		world/lavasizzlesmall
+
+	BaseClass		NJNukageBase
+	ChunkClass		NJNukageSmoke
+	ChunkXVelShift	-1
+	ChunkYVelShift	-1
+	ChunkZVelShift	7
+	ChunkBaseZVel	1
+	Sound			world/lavasizzle
+	NoAlert
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// Slime Brown Splash
+///////////////////////////////////////////////////////////////////////////////////
+
+Splash SlimeBrown
+{
+	SmallClass		NJSlimeBrownBase
+	SmallClip		6
+	SmallSound		world/sludgegloopsmall
+
+	BaseClass		NJSlimeBrownBase
+	ChunkClass		NJSlimeBrownChunk
+	ChunkXVelShift	6
+	ChunkYVelShift	6
+	ChunkZVelShift	6
+	ChunkBaseZVel	2
+	Sound			world/sludgegloop
+	NoAlert
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// Sludge Greeny-Brown Splash
+///////////////////////////////////////////////////////////////////////////////////
+
+Splash SludgeGreenBrown
+{
+	SmallClass		NJSludgeBase
+	SmallClip		8
+	SmallSound		world/sludgegloopsmall
+
+	BaseClass		NJSludgeBase
+	ChunkClass		NJSludgeChunk
+	ChunkXVelShift	5
+	ChunkYVelShift	5
+	ChunkZVelShift	5
+	ChunkBaseZVel	2
+	Sound			world/sludgegloop
+	NoAlert
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// Water Splash
+///////////////////////////////////////////////////////////////////////////////////
+
+Splash Water
+{
+	SmallClass		NJWaterSplashBase
+	SmallClip		12
+	SmallSound		world/watersplashsmall
+
+	BaseClass		NJWaterSplashBase
+	ChunkClass		NJWaterSplashChunk
+	ChunkXVelShift	8
+	ChunkYVelShift	8
+	ChunkZVelShift	8
+	ChunkBaseZVel	2
+	Sound			world/watersplash
+	NoAlert
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+
+//Terrains
+
+// Dull red blood
+Terrain Blood
+{
+	Splash			Blood
+	FootClip		10
+	Liquid
+}
+
+// Smokey lava
+Terrain Lava
+{
+	Splash			Lava
+	FootClip		10
+	Liquid
+}
+
+// Just smoke
+Terrain LavaSmoke
+{
+	Splash			LavaSmoke
+	FootClip		0
+	Liquid
+}
+
+// Bright green and smoke
+Terrain Nuke
+{
+	Splash			Nuke
+	FootClip		10
+	Liquid
+}
+
+// Brown and gloopy
+Terrain SlimeBrown
+{
+	Splash			SlimeBrown
+	FootClip		10
+	Liquid
+}
+
+// Greeny brown and gloopy
+Terrain SludgeGreenBrown
+{
+	Splash			SludgeGreenBrown
+	FootClip		10
+	Liquid
+}
+
+// Normal water
+Terrain Water
+{
+	Splash			Water
+	FootClip		10
+	Liquid
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
+// Floors
+
+Floor BLOOD1 Blood
+Floor BLOOD2 Blood
+Floor BLOOD3 Blood
+
+Floor FWATER1 Water
+Floor FWATER2 Water
+Floor FWATER3 Water
+Floor FWATER4 Water
+
+Floor LAVA1 Lava
+Floor LAVA2 Lava
+Floor LAVA3 Lava
+Floor LAVA4 Lava
+
+Floor NUKAGE1 Nuke
+Floor NUKAGE2 Nuke
+Floor NUKAGE3 Nuke
