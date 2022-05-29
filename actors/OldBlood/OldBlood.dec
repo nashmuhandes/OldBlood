@@ -25,7 +25,8 @@ Actor OldBlood : Blood replaces Blood
 				frandom[rng_SpawnBlood](0.0, 2.0),
 				frandom[rng_SpawnBlood](0.0, 360.0),
 				SXF_TRANSFERTRANSLATION)
-			TNT1 A 0 A_Jump(256, "BloodC", "BloodB", "BloodA")
+			TNT1 A 1 A_Jump(256, "BloodC", "BloodB", "BloodA")
+			Wait
 		BloodC:
 			BLUD C 8
 		BloodB:
@@ -63,6 +64,7 @@ Actor OldBloodSpot
 			TNT1 A 0 A_Jump(128, 2)
 			TNT1 A 0 A_SetScale(ScaleX * -1.0, ScaleY)
 			TNT1 A 1 A_Jump(256, "Blood1", "Blood2", "Blood3", "Blood4", "Blood5", "Blood6")
+			Wait
 		Blood1:
 			VBLD A 35
 			Goto BloodLoop
