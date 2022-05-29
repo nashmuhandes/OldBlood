@@ -6,16 +6,23 @@
 //
 //===========================================================================
 
-Actor OldBloodPlayer : DoomPlayer replaces DoomPlayer
+Actor OldBloodPlayerDoom2 : OldBloodPlayer replaces DoomPlayer
 {
 	Player.StartItem "OldBloodPistol"
 	Player.StartItem "OldBloodFist"
 	Player.StartItem "Clip", 50
 	Player.WeaponSlot 1, OldBloodFist, OldBloodChainsaw
    	Player.WeaponSlot 2, OldBloodPistol
-	Player.WeaponSlot 3, OldBloodShotgun
+	Player.WeaponSlot 3, OldBloodShotgun, OldBloodSuperShotgun
 	Player.WeaponSlot 4, OldBloodChaingun
 	Player.WeaponSlot 5, OldBloodRocketLauncher
 	Player.WeaponSlot 6, OldBloodPlasmaRifle
 	Player.WeaponSlot 7, OldBloodBFG9000
+
+	States
+	{
+		Spawn:
+			BOSS A 1
+			Loop
+	}
 }

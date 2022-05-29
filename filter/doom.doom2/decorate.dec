@@ -1,2 +1,3 @@
+#include "actors/OldBlood/OldBloodPlayerDoom2.dec"
 #include "actors/OldBlood/OldBloodMonstersDoom2.dec"
 #include "actors/OldBlood/OldBloodWeaponsDoom2.dec"
