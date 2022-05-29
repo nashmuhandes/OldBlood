@@ -13,10 +13,11 @@ Actor OldBloodGib
 	Gravity 0.43
 	Speed 7
 	Mass 1
-	BounceFactor 0.4
+	BounceType "Doom"
+	BounceFactor 0.45
+	BounceSound "nashgore/gibbounce"
 	Decal "BloodSplat"
 	+MISSILE
-	+DOOMBOUNCE
 	+FLOORCLIP
 	+DONTSPLASH
 	+NOTELEPORT

@@ -89,5 +89,5 @@ $random nashgore/gibbounce
 	nashgore/gibbounce03
 }
 
-$volume nashgore/gibbounce 0.225
-$limit nashgore/gibbounce 4
+$volume nashgore/gibbounce 0.1
+$limit nashgore/gibbounce 10
