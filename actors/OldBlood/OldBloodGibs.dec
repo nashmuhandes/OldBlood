@@ -8,7 +8,7 @@
 
 Actor OldBloodGib
 {
-	Radius 4
+	Radius 2
 	Height 8
 	Gravity 0.43
 	Speed 7
