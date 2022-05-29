@@ -16,7 +16,7 @@ Actor OldBloodChaingunGuy : ChaingunGuy replaces ChaingunGuy
 			CPOS F 1 Bright A_CPosRefire
 			Goto Missile + 1
 		XDeath:
-			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner1")
+			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner")
 			Goto Super::XDeath
 	}
 }
