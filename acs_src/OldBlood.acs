@@ -38,6 +38,11 @@ Script "OldBloodAddToQueue" (void)
 	}
 }
 
+Script "OldBloodGibInit" (void)
+{
+	SetActorProperty(0, APROP_Gravity, FixedMul(GetActorProperty(0, APROP_Gravity), random(0.75, 1.25)));
+}
+
 /*
 Script "OldBloodDebug" OPEN
 {
