@@ -42,7 +42,8 @@ Actor OldBloodGib
 			Loop
 		Death:
 			"####" "#" 0 ACS_NamedExecuteWithResult("OldBloodAddToQueue", 0)
-			"####" "#" 0 A_SpawnItemEx("OldBloodFX1")
+			// The blood FX needs to be spawned higher than the floor otherwise it'll glitch the fuck out in Zandronum multiplayer
+			"####" "#" 0 A_SpawnItemEx("OldBloodFX1", 0.0, 0.0, 12.0, 0.0, 0.0, 0.0, 0.0, SXF_TRANSFERTRANSLATION)
 			"####" I 35
 			"####" "#" 0 A_ChangeFlag("NoInteraction", 1)
 			"####" "#" 0 A_ChangeFlag("MoveWithSector", 1)
@@ -93,7 +94,7 @@ Actor OldBloodGib1Spawner
 	States
 	{
 		Spawn:
-			TNT1 AAAAAAAAAA 0 NoDelay A_CustomMissile("OldBloodGib1", frandom(-4.0, 4.0), 0.0, frandom(0.0, 360.0), CMF_AIMDIRECTION, frandom(0.0, 180.0))
+			TNT1 AAAAAAAAAA 0 NoDelay A_CustomMissile("OldBloodGib1", frandom[rnd_GibSpawner](-4.0, 4.0), 0.0, frandom[rnd_GibSpawner](0.0, 360.0), CMF_AIMDIRECTION, frandom[rnd_GibSpawner](0.0, 180.0))
 			Stop
 	}
 }
@@ -103,7 +104,7 @@ Actor OldBloodGib2Spawner
 	States
 	{
 		Spawn:
-			TNT1 AAAAAAAAAA 0 NoDelay A_CustomMissile("OldBloodGib2", frandom(-4.0, 4.0), 0.0, frandom(0.0, 360.0), CMF_AIMDIRECTION, frandom(0.0, 180.0))
+			TNT1 AAAAAAAAAA 0 NoDelay A_CustomMissile("OldBloodGib2", frandom[rnd_GibSpawner](-4.0, 4.0), 0.0, frandom[rnd_GibSpawner](0.0, 360.0), CMF_AIMDIRECTION, frandom[rnd_GibSpawner](0.0, 180.0))
 			Stop
 	}
 }
@@ -113,7 +114,7 @@ Actor OldBloodGib3Spawner
 	States
 	{
 		Spawn:
-			TNT1 AAAAAAAAAA 0 NoDelay A_CustomMissile("OldBloodGib3", frandom(-4.0, 4.0), 0.0, frandom(0.0, 360.0), CMF_AIMDIRECTION, frandom(0.0, 180.0))
+			TNT1 AAAAAAAAAA 0 NoDelay A_CustomMissile("OldBloodGib3", frandom[rnd_GibSpawner](-4.0, 4.0), 0.0, frandom[rnd_GibSpawner](0.0, 360.0), CMF_AIMDIRECTION, frandom[rnd_GibSpawner](0.0, 180.0))
 			Stop
 	}
 }
@@ -127,6 +128,17 @@ Actor OldBloodGibSpawner
 			TNT1 A 0 A_SpawnItemEx("OldBloodGib1Spawner", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, SXF_TRANSFERTRANSLATION)
 			TNT1 A 0 A_SpawnItemEx("OldBloodGib2Spawner", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, SXF_TRANSFERTRANSLATION)
 			TNT1 A 0 A_SpawnItemEx("OldBloodGib3Spawner", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, SXF_TRANSFERTRANSLATION)
+			/*
+			TNT1 AAAAAAAAAA 0 A_SpawnItemEx("OldBloodFX1",
+				frandom[rnd_GibSpawnerBlood](-4.0, 4.0),
+				frandom[rnd_GibSpawnerBlood](-4.0, 4.0),
+				frandom[rnd_GibSpawnerBlood](-10.0, 10.0),
+				frandom[rnd_GibSpawnerBlood](-2.0, 2.0),
+				frandom[rnd_GibSpawnerBlood](-2.0, 2.0),
+				frandom[rnd_GibSpawnerBlood](0.0, 2.0),
+				frandom[rnd_GibSpawnerBlood](0.0, 360.0),
+				SXF_TRANSFERTRANSLATION)
+			*/
 			Stop
 	}
 }
