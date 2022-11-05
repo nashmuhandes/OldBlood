@@ -6,6 +6,10 @@
 //
 //===========================================================================
 
+const float ZOMBIEMAN_DEFAULT_HEIGHT = 56;
+const float SHOTGUNGUY_DEFAULT_HEIGHT = 56;
+const float DOOMIMP_DEFAULT_HEIGHT = 56;
+
 Actor OldBloodZombieMan : ZombieMan replaces ZombieMan
 {
 	States
@@ -16,7 +20,7 @@ Actor OldBloodZombieMan : ZombieMan replaces ZombieMan
 			POSS E 8
 			Goto See
 		XDeath:
-			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner")
+			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner", 0., 0., ZOMBIEMAN_DEFAULT_HEIGHT / 2, 0., 0., 0., 0., SXF_CLIENTSIDE)
 			Goto Super::XDeath
 	}
 }
@@ -26,7 +30,7 @@ Actor OldBloodShotgunGuy : ShotgunGuy replaces ShotgunGuy
 	States
 	{
 		XDeath:
-			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner")
+			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner", 0., 0., SHOTGUNGUY_DEFAULT_HEIGHT / 2, 0., 0., 0., 0., SXF_CLIENTSIDE)
 			Goto Super::XDeath
 	}
 }
@@ -36,7 +40,7 @@ Actor OldBloodDoomImp : DoomImp replaces DoomImp
 	States
 	{
 		XDeath:
-			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner")
+			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner", 0., 0., DOOMIMP_DEFAULT_HEIGHT / 2, 0., 0., 0., 0., SXF_CLIENTSIDE)
 			Goto Super::XDeath
 	}
 }

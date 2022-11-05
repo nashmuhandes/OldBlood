@@ -6,6 +6,8 @@
 //
 //===========================================================================
 
+const float CHAINGUNGUY_DEFAULT_HEIGHT = 56;
+
 Actor OldBloodChaingunGuy : ChaingunGuy replaces ChaingunGuy
 {
 	States
@@ -16,7 +18,7 @@ Actor OldBloodChaingunGuy : ChaingunGuy replaces ChaingunGuy
 			CPOS F 1 Bright A_CPosRefire
 			Goto Missile + 1
 		XDeath:
-			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner")
+			"####" "#" 0 A_SpawnItemEx("OldBloodGibSpawner", 0., 0., CHAINGUNGUY_DEFAULT_HEIGHT / 2, 0., 0., 0., 0., SXF_CLIENTSIDE)
 			Goto Super::XDeath
 	}
 }
